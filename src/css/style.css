@@ -10,6 +10,7 @@
     position: absolute;
     left: 300px;
     top:200px;
+    background-color: white;
 }
 
 .modal-remove {
@@ -23,6 +24,7 @@
     position: absolute;
     left: 300px;
     top:200px;
+    background-color: white;
 }
 
 .content-container {
@@ -119,4 +121,8 @@ label {
 .date {
     font-size: 12px;
     margin-right: 5px;
+}
+
+.content {
+    cursor: pointer;
 }

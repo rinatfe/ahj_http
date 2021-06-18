@@ -50,7 +50,7 @@ export default class Tickets {
 
   onLoad() {
     this.obj.addEventListener('DOMContentLoaded', () => {
-      this.xhr.open('GET', 'http://localhost:7070/?method=allTickets');
+      this.xhr.open('GET', 'https://support-server-heroku.herokuapp.com/?method=allTickets');
       this.xhr.send();
       this.addListenerLoad(this.render);
     });
@@ -118,7 +118,7 @@ export default class Tickets {
         this.modal.querySelector('.header-modal').innerText = 'Добавить тикет';
         this.editing = null;
       } else {
-        this.xhr.open('POST', 'http://localhost:7070/?method=createTicket');
+        this.xhr.open('POST', 'https://support-server-heroku.herokuapp.com/?method=createTicket');
         this.xhr.send(JSON.stringify({
             id: null, // eslint-disable-line
             name: this.description.value, // eslint-disable-line
@@ -163,7 +163,7 @@ export default class Tickets {
         e.target.nextElementSibling.style.display = 'none';
         e.target.nextElementSibling.innerText = '';
       } else {
-        this.xhr.open('GET', `http://localhost:7070/?method=ticketById&id=${e.target.dataset.id}`);
+        this.xhr.open('GET', `https://support-server-heroku.herokuapp.com/?method=ticketById&id=${e.target.dataset.id}`);
         this.xhr.send();
         this.addListenerLoad(this.renderDrop, e);
         e.target.nextElementSibling.style.display = 'block';
